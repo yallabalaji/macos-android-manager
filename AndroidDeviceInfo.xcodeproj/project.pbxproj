@@ -15,20 +15,26 @@
 		AA0000300000000000000001 /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000310000000000000001 /* FileItem.swift */; };
 		AA0000320000000000000001 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000330000000000000001 /* FileSystemManager.swift */; };
 		AA0000340000000000000001 /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000350000000000000001 /* FileBrowserView.swift */; };
+		AD53140D2F350F2F0069C177 /* StorageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53140C2F350F2F0069C177 /* StorageAnalyzer.swift */; };
+		AD53140F2F350F480069C177 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53140E2F350F480069C177 /* DashboardView.swift */; };
+		AD5314112F35100D0069C177 /* LargeFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5314102F35100D0069C177 /* LargeFilesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA0000110000000000000001 /* AndroidDeviceInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndroidDeviceInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000020000000000000001 /* AndroidDeviceInfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidDeviceInfoApp.swift; sourceTree = "<group>"; };
 		AA0000040000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000060000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AA0000120000000000000001 /* AndroidDeviceInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AndroidDeviceInfo.entitlements; sourceTree = "<group>"; };
 		AA0000080000000000000001 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		AA0000100000000000000001 /* ADBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBManager.swift; sourceTree = "<group>"; };
+		AA0000110000000000000001 /* AndroidDeviceInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndroidDeviceInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000120000000000000001 /* AndroidDeviceInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AndroidDeviceInfo.entitlements; sourceTree = "<group>"; };
 		AA0000130000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000310000000000000001 /* FileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItem.swift; sourceTree = "<group>"; };
 		AA0000330000000000000001 /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
 		AA0000350000000000000001 /* FileBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserView.swift; sourceTree = "<group>"; };
+		AD53140C2F350F2F0069C177 /* StorageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAnalyzer.swift; sourceTree = "<group>"; };
+		AD53140E2F350F480069C177 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		AD5314102F35100D0069C177 /* LargeFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeFilesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 			children = (
 				AA0000100000000000000001 /* ADBManager.swift */,
 				AA0000330000000000000001 /* FileSystemManager.swift */,
+				AD53140C2F350F2F0069C177 /* StorageAnalyzer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -94,7 +101,9 @@
 		AA0000360000000000000001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD5314102F35100D0069C177 /* LargeFilesView.swift */,
 				AA0000350000000000000001 /* FileBrowserView.swift */,
+				AD53140E2F350F480069C177 /* DashboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,7 +136,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					AA0000200000000000000001 = {
 						CreatedOnToolsVersion = 15.0;
@@ -171,7 +180,10 @@
 				AA0000030000000000000001 /* ContentView.swift in Sources */,
 				AA0000070000000000000001 /* DeviceInfo.swift in Sources */,
 				AA0000300000000000000001 /* FileItem.swift in Sources */,
+				AD53140D2F350F2F0069C177 /* StorageAnalyzer.swift in Sources */,
+				AD53140F2F350F480069C177 /* DashboardView.swift in Sources */,
 				AA0000090000000000000001 /* ADBManager.swift in Sources */,
+				AD5314112F35100D0069C177 /* LargeFilesView.swift in Sources */,
 				AA0000320000000000000001 /* FileSystemManager.swift in Sources */,
 				AA0000340000000000000001 /* FileBrowserView.swift in Sources */,
 				AA0000010000000000000001 /* AndroidDeviceInfoApp.swift in Sources */,
@@ -215,6 +227,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -239,6 +252,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -278,6 +292,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -295,6 +310,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -308,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -334,6 +351,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;

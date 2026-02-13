@@ -21,10 +21,19 @@ struct ContentView: View {
 struct ContentViewMain: View {
     @ObservedObject var adbManager: ADBManager
     @StateObject private var fileManager: FileSystemManager
+    @StateObject private var storageAnalyzer: StorageAnalyzer
+    @State private var selectedView: NavigationItem = .dashboard
+    
+    enum NavigationItem: String, CaseIterable {
+        case dashboard = "Dashboard"
+        case files = "Files"
+    }
     
     init(adbManager: ADBManager) {
         self.adbManager = adbManager
-        _fileManager = StateObject(wrappedValue: FileSystemManager(adbManager: adbManager))
+        let fm = FileSystemManager(adbManager: adbManager)
+        _fileManager = StateObject(wrappedValue: fm)
+        _storageAnalyzer = StateObject(wrappedValue: StorageAnalyzer(adbManager: adbManager, fileManager: fm))
     }
     
     var body: some View {
@@ -115,6 +124,34 @@ struct ContentViewMain: View {
                     
                     Divider()
                     
+                    // Navigation
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("NAVIGATION")
+                            .font(.caption2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 8)
+                        
+                        ForEach(NavigationItem.allCases, id: \.self) { item in
+                            Button(action: {
+                                selectedView = item
+                            }) {
+                                HStack {
+                                    Image(systemName: item == .dashboard ? "chart.pie.fill" : "folder.fill")
+                                    Text(item.rawValue)
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 6)
+                                .background(selectedView == item ? Color.accentColor.opacity(0.2) : Color.clear)
+                                .cornerRadius(6)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    
+                    Divider()
+                    
                     // Settings
                     Toggle("System Access", isOn: $fileManager.allowSystemAccess)
                         .font(.caption)
@@ -126,14 +163,19 @@ struct ContentViewMain: View {
             .padding()
             .frame(minWidth: 220, idealWidth: 250)
         } detail: {
-            // Main content area - File Browser
+            // Main content area
             if adbManager.deviceInfo.isConnected {
-                FileBrowserView(fileManager: fileManager)
-                    .onAppear {
-                        Task {
-                            await fileManager.listDirectory()
+                switch selectedView {
+                case .dashboard:
+                    DashboardView(storageAnalyzer: storageAnalyzer)
+                case .files:
+                    FileBrowserView(fileManager: fileManager)
+                        .onAppear {
+                            Task {
+                                await fileManager.listDirectory()
+                            }
                         }
-                    }
+                }
             } else {
                 NoDeviceView()
             }

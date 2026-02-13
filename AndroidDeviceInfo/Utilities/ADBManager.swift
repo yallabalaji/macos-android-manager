@@ -91,7 +91,7 @@ class ADBManager: ObservableObject {
         return (totalGB, availableGB)
     }
     
-    private func executeCommand(_ arguments: [String]) async -> String {
+    func executeCommand(_ arguments: [String]) async -> String {
         await withCheckedContinuation { continuation in
             let process = Process()
             process.executableURL = URL(fileURLWithPath: adbPath)
